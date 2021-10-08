@@ -9,15 +9,23 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <java.version>17</java.version>
-        
+        <maven.compiler.parameters>true</maven.compiler.parameters>
+        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <maven.surefire.version>2.22.2</maven.surefire.version>
+
+        <yasson.version>2.0.2</yasson.version>
         <junit.version>5.8.1</junit.version>
-        <surefire.version>3.0.0-M5</surefire.version>
     </properties>
     
     <dependencies>
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>${yasson.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -29,8 +37,12 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+            </plugin>
+            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surefire.version}</version>
+                <version>${maven.surefire.version}</version>
             </plugin>
         </plugins>
     </build>    
