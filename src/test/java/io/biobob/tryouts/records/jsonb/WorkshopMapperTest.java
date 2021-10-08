@@ -18,13 +18,13 @@ class WorkshopMapperTest {
         BDD,  '',                        2010,  5, 22,  2, 13, 59, '{"date":"2010-05-22T02:13:59","description":"","title":"BDD"}'
         '',   '',                        2321, 12, 31, 23, 59, 59, '{"date":"2321-12-31T23:59:59","description":"","title":""}'
     """)
-    void shouldMarshall(String title, String description, int year, int month, int day, int hour, int minute, int second, String expectedJson) {
+    void shouldSerialize(String title, String description, int year, int month, int day, int hour, int minute, int second, String expectedJson) {
         var workshop = new Workshop(title, LocalDateTime.of(year, month, day, hour, minute, second), description);
         assertEquals(expectedJson, WorkshopMapper.toJson(workshop));
     }
 
     @Test
-    void shouldFailMarshallingNull() {
+    void shouldFailSerializationOfNull() {
         assertThrows(NullPointerException.class, () -> {
             WorkshopMapper.toJson(null);
         });
@@ -37,7 +37,7 @@ class WorkshopMapperTest {
         '{"date":"2010-05-22T02:13:59","description":"","title":"BDD"}',                           BDD,  '',                        2010,  5, 22,  2, 13, 59
         '{"date":"2321-12-31T23:59:59","description":"","title":""}',                              '',   '',                        2321, 12, 31, 23, 59, 59
     """)
-    void shouldUnmarshall(String json, String title, String description, int year, int month, int day, int hour, int minute, int second) {
+    void shouldDeserialize(String json, String title, String description, int year, int month, int day, int hour, int minute, int second) {
         var workshop = WorkshopMapper.fromJson(json);
         assertNotNull(workshop);
         assertEquals(title, workshop.title());
@@ -56,14 +56,14 @@ class WorkshopMapperTest {
         {"date":"","description":"","title":""}
         {"date":"wrong format","description":"something","title":"A"}
     """)
-    void shouldFailUnmarshallingInvalidJson(String json) {
+    void shouldFailDeserializationOfInvalidJson(String json) {
         assertThrows(JsonbException.class, () -> {
             WorkshopMapper.fromJson(json);
         });
     }
 
     @Test
-    void shouldFailUnmarshallingNull() {
+    void shouldFailDeserializationOfNull() {
         assertThrows(NullPointerException.class, () -> {
             WorkshopMapper.fromJson(null);
         });
