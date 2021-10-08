@@ -14,7 +14,7 @@ public interface WorkshopMapper {
              * Existing strategy from Yasson is used - this is not ideal because it is not part of specification.
              * There are two possible ways that could solve this problem:
              *   - future version of JSON-B could detect that class is actually record and use proper strategy by default
-             *   - common implementations of strategies should be part of spec from 2.1.0 - see https://github.com/eclipse-ee4j/jsonb-api/issues/164
+             *   - common implementations of strategies should be part of spec in the future (2.x Milestone) - see https://github.com/eclipse-ee4j/jsonb-api/issues/164
              */
             .withPropertyVisibilityStrategy(new FieldAccessStrategy());
 
