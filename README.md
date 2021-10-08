@@ -54,7 +54,8 @@ There are some limitation to this approach:
 For serialization purposes it is needed to setup configuration so records fields are used to get values instead of accessor methods.
 
 ```java
-JsonbConfig config = new JsonbConfig().withPropertyVisibilityStrategy(new org.eclipse.yasson.FieldAccessStrategy());     
+JsonbConfig config = new JsonbConfig()
+        .withPropertyVisibilityStrategy(new org.eclipse.yasson.FieldAccessStrategy());     
 ```
 
 The property visibility strategy was taken from Yasson itself. I think it simplified the example, but I don't recommend this approach. The code depends on the implementation
