@@ -1,5 +1,6 @@
 [![Unit Tests](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml)
-![Coverage](.github/badges/jacoco.svg)
+[![Coverage](.github/badges/jacoco.svg)](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml)
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 # [Jakarta JSON Binding](https://projects.eclipse.org/projects/ee4j.jsonb) + [Eclipse Yasson](https://projects.eclipse.org/projects/ee4j.jsonb) + [Java Records](https://openjdk.java.net/jeps/395)
 
