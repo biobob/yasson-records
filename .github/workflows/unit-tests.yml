@@ -12,7 +12,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Compile
-        run: mvn compile
+      - name: Build JAR
+        run: mvn package --batch-mode --update-snapshots -DskipTests
       - name: Unit Test
-        run: mvn org.jacoco:jacoco-maven-plugin:prepare-agent surefire:test org.jacoco:jacoco-maven-plugin:report
+        run: mvn org.jacoco:jacoco-maven-plugin:prepare-agent surefire:test org.jacoco:jacoco-maven-plugin:report --batch-mode
