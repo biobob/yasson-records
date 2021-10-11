@@ -23,3 +23,5 @@ jobs:
           name: 'Surefire Tests'
           reporter: 'java-junit'
           path: 'target/surefire-reports/TEST-*.xml'
+      - name: Generate JaCoCo Badge
+        uses: cicirello/jacoco-badge-generator@v2
