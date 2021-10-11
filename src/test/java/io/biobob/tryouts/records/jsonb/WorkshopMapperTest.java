@@ -52,11 +52,32 @@ class WorkshopMapperTest {
         {}
         {"foo"="bar"}
         '{"a"="b","c"="d"}'
-        {"date":"2000-01-01T00:00:00","title":""}
-        {"date":"","description":"","title":""}
-        {"date":"wrong format","description":"something","title":"A"}
+        '{"date":"","description":"","title":""}'
+        '{"date":"wrong format","description":"something","title":"A"}'
+        '{"date":"1980-01-01","description":"something","title":"A"}'
     """)
     void shouldFailDeserializationOfInvalidJson(String json) {
+        assertThrows(JsonbException.class, () -> {
+            WorkshopMapper.fromJson(json);
+        });
+    }
+
+    /**
+     * This is the problematic part described in the README. Specification dictates this behavior when using
+     * <code>@JsonbCreator</code> annotation. The implementation respects it and following test is proving that.
+     * In real world it would be much more useful to have a way for parsing JSONs with absent fields because it's common
+     * practice for many frameworks to use absent field as representation of <code>null</code> field value.
+     */
+    @ParameterizedTest
+    @CsvSource(textBlock = """
+        '{"description":"Java programming language","title":"Java"}'
+        '{"date":"1998-11-14T09:08:07","title":"Java"}'
+        '{"date":"1998-11-14T09:08:07","description":"Java programming language"}'
+        '{"title":"Java"}'
+        '{"description":"Java programming language"}'
+        '{"date":"1998-11-14T09:08:07"}'
+    """)
+    void shouldFailDeserializationOfJsonWithAbsentField(String json) {
         assertThrows(JsonbException.class, () -> {
             WorkshopMapper.fromJson(json);
         });
