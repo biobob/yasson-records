@@ -1,7 +1,7 @@
 name: Unit Tests
 on: [push]
 jobs:
-  build:
+  pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Source Code Checkout
@@ -16,3 +16,10 @@ jobs:
         run: mvn package --batch-mode --update-snapshots -DskipTests
       - name: Unit Test
         run: mvn org.jacoco:jacoco-maven-plugin:prepare-agent surefire:test org.jacoco:jacoco-maven-plugin:report --batch-mode
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: 'Surefire Tests'
+          reporter: 'java-junit'
+          path: 'target/surefire-reports/TEST-*.xml'
