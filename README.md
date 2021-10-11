@@ -1,3 +1,5 @@
+[![Unit Tests](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml)
+
 # [Jakarta JSON Binding](https://projects.eclipse.org/projects/ee4j.jsonb) + [Eclipse Yasson](https://projects.eclipse.org/projects/ee4j.jsonb) + [Java Records](https://openjdk.java.net/jeps/395)
 
 | Component                   | Version                                                                                                                                                                            |

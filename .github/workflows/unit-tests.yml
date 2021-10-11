@@ -1,7 +1,7 @@
 name: Unit Tests
 on: [push]
 jobs:
-  pipeline:
+  Pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Source Code Checkout
