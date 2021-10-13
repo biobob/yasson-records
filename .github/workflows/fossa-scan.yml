@@ -11,5 +11,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Fossa License Scan
         uses: fossas/fossa-action@main
+        if: ${{ github.repository == 'biobob/yasson-records'}}
         with:
           api-key: ${{secrets.FOSSA_API_TOKEN}}
