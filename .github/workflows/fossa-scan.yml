@@ -1,0 +1,15 @@
+name: license scan
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Source Code Checkout
+        uses: actions/checkout@v2
+      - name: Fossa License Scan
+        uses: fossas/fossa-action@main
+        with:
+          api-key: ${{secrets.FOSSA_API_TOKEN}}
