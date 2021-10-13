@@ -1,6 +1,7 @@
 [![Unit Tests](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml)
 [![Coverage](.github/badges/jacoco.svg)](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbiobob%2Fyasson-records.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbiobob%2Fyasson-records?ref=badge_shield)
 
 # [Jakarta JSON Binding](https://projects.eclipse.org/projects/ee4j.jsonb) + [Eclipse Yasson](https://projects.eclipse.org/projects/ee4j.jsonb) + [Java Records](https://openjdk.java.net/jeps/395)
 
@@ -72,3 +73,7 @@ There are two possible ways that could solve this problem:
 ## Conclusion
 Current state is usable for cases when absent field in JSON can be eliminated. New version of specification should fix this and the situation will be ideal for Java Records as
 DTOs. The problem with strategies is minor because we can always create own implementation in our code without referencing Yasson implementation.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbiobob%2Fyasson-records.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbiobob%2Fyasson-records?ref=badge_large)
