@@ -1,6 +1,6 @@
 [![Unit Tests](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml)
 [![Coverage](.github/badges/jacoco.svg)](https://github.com/biobob/yasson-records/actions/workflows/unit-tests.yml)
-[![vulnerabilities scan](https://github.com/biobob/yasson-records/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/biobob/yasson-records/actions/workflows/codeql-analysis.yml)
+[![Vulnerabilities scan](https://github.com/biobob/yasson-records/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/biobob/yasson-records/security/code-scanning)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbiobob%2Fyasson-records.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbiobob%2Fyasson-records?ref=badge_shield)
 
