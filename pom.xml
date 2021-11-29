@@ -17,7 +17,7 @@
         <maven.surefire.version>2.22.2</maven.surefire.version>
 
         <yasson.version>2.0.2</yasson.version>
-        <junit.version>5.8.1</junit.version>
+        <junit.version>5.8.2</junit.version>
     </properties>
     
     <dependencies>
